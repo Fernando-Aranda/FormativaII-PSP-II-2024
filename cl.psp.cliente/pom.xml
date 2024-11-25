@@ -24,12 +24,6 @@
         </dependency>
         <dependency>
             <groupId>cl.psp</groupId>
-            <artifactId>cuenta</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>cl.psp</groupId>
             <artifactId>cl.psp.cuenta</artifactId>
             <version>1.0</version>
             <scope>compile</scope>

@@ -1,4 +1,4 @@
-package org.test.activator;
+package org.test.integration;
 
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
@@ -12,14 +12,13 @@ import org.osgi.framework.Bundle;
 import org.ops4j.pax.exam.junit.Configuration;
 import org.junit.Assert;
 import org.osgi.framework.BundleContext;
-import org.test.antiguo.TestPagoAntiguo;
-import org.test.nuevo.TestPagoNuevo;
+import org.test.testcases.TestPagoAntiguo;
+import org.test.testcases.TestPagoNuevo;
 
 import javax.inject.Inject;
 
 @RunWith(PaxExam.class)
-public class TestBundleIntegration{
-
+public class TestBundleIntegration {
 
     @Inject
     BundleContext context;
@@ -29,8 +28,8 @@ public class TestBundleIntegration{
         return options(
                 junitBundles(),
                 cleanCaches(),
-                mavenBundle("cl.psp", "cliente", "1.0"),
-                mavenBundle("cl.psp", "cuenta", "1.0")
+                mavenBundle("cl.psp", "cliente", "1.0.0"),
+                mavenBundle("cl.psp", "cuenta", "1.0.0")
         );
     }
 
@@ -75,6 +74,7 @@ public class TestBundleIntegration{
                 System.out.println(failure.toString());
             }
         }
+
         Assert.assertTrue(result.wasSuccessful());
     }
 

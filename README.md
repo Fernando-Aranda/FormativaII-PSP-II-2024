@@ -28,5 +28,12 @@ list
 ## Ejecutar Tests
 
 <code>
-mvn -pl cliente,test,cuenta clean test
+mvn -pl cl.psp.cliente,cl.psp.cuenta,test clean test
 </code>
+
+## Instrucciones
+
+1. Crear casos de test de acuerdo a como se presenta el proyecto. 
+2. Refactorizar el proyecto para que el despliegue de los bundles sea independiente.
+3. Rehacer los casos de test usando mocks para los servicios no disponibles (recuerde que 
+como ahora los bundles son independientes, los servicios podría no estar disponibles).
