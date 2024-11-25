@@ -1,0 +1,7 @@
+2024-11-25T18:56:58,207 [main] INFO  org.ops4j.pax.exam.spi.DefaultExamSystem - Pax Exam System (Version: 4.13.5) created.
+2024-11-25T18:56:58,231 [main] INFO  org.ops4j.pax.exam.junit.impl.ProbeRunner - creating PaxExam runner for class org.test.integration.TestBundleIntegration
+2024-11-25T18:56:58,257 [main] INFO  org.ops4j.pax.exam.junit.impl.ProbeRunner - running test class org.test.integration.TestBundleIntegration
+2024-11-25T18:56:58,289 [main] INFO  org.ops4j.pax.exam.ExamJavaRunner - ExamJavaRunner completed successfully
+2024-11-25T18:56:58,695 [main] INFO  org.ops4j.pax.exam.ExamJavaRunner - ExamJavaRunner completed successfully
+2024-11-25T18:56:59,018 [main] INFO  org.ops4j.pax.exam.ExamJavaRunner - ExamJavaRunner completed successfully
+2024-11-25T18:56:59,348 [main] INFO  org.ops4j.pax.exam.spi.reactors.ReactorManager - suite finished
