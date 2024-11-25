@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1732550236621
+Build-Jdk-Spec: 17
+Bundle-ManifestVersion: 2
+Bundle-Name: test OSGi Bundle
+Bundle-SymbolicName: test
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin 5.1.9
+Import-Package: org.cuenta,org.cliente,java.math,org.junit,org.osgi.fram
+ ework;version="[1.10,2)",java.util,org.ops4j.pax.exam;version="[4.13,5)
+ "
+Tool: Bnd-6.3.1.202206071316
