@@ -22,10 +22,10 @@ public class TestPagoAntiguo {
         Cliente cliente = new Cliente();
         cliente.crearCuenta(new BigDecimal(500));
 
-        Iterator bills = cliente.obtenerCuentas().iterator();
+        Iterator cuentas = cliente.obtenerCuentas().iterator();
 
-        while (bills.hasNext()) {
-            Cuenta cuenta = (Cuenta) bills.next();
+        while (cuentas.hasNext()) {
+            Cuenta cuenta = (Cuenta) cuentas.next();
             BigDecimal paidAmount = cuenta.pagar();
             assertEquals("Pago del monto no es correcto.", new BigDecimal(485).setScale(2), paidAmount);
         }
