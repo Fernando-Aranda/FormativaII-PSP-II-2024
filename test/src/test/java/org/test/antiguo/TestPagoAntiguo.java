@@ -26,8 +26,8 @@ public class TestPagoAntiguo {
 
         while (cuentas.hasNext()) {
             Cuenta cuenta = (Cuenta) cuentas.next();
-            BigDecimal paidAmount = cuenta.pagar();
-            assertEquals("Pago del monto no es correcto.", new BigDecimal(485).setScale(2), paidAmount);
+            BigDecimal pagarMonto = cuenta.pagar();
+            assertEquals("Pago del monto no es correcto.", new BigDecimal(485).setScale(2), pagarMonto);
         }
     }
 
@@ -38,7 +38,7 @@ public class TestPagoAntiguo {
             public BigDecimal obtenerMontoDescuento() { return new BigDecimal(0.1); }
         }, new BigDecimal(500));
 
-        BigDecimal montoPago = cuenta.pagar();
-        assertEquals("Pago del monto no es correcto.", new BigDecimal(450).setScale(2), montoPago);
+        BigDecimal pagarMonto = cuenta.pagar();
+        assertEquals("Pago del monto no es correcto.", new BigDecimal(450).setScale(2), pagarMonto);
     }
 }

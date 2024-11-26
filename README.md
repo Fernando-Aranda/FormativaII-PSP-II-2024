@@ -9,7 +9,7 @@ dependencias, aplicando el Principio de Inversión de Dependencias (DIP), garant
 ## Compilación
 
 <code>
-mvn -pl cliente,test,cuenta clean deploy
+mvn -pl cl.psp.cliente,cl.psp.cuenta,test clean deploy
 </code>
 
 ## Repositorio
@@ -29,6 +29,11 @@ list
 
 <code>
 mvn -pl cl.psp.cliente,cl.psp.cuenta,test clean test
+</code>
+
+## Reporte
+<code>
+mvn surefire-report:report-only
 </code>
 
 ## Instrucciones

@@ -1,59 +1,47 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1732571817440
+Bnd-LastModified: 1732591105376
 Build-Jdk-Spec: 17
 Bundle-ManifestVersion: 2
 Bundle-Name: test OSGi Bundle
 Bundle-SymbolicName: test
 Bundle-Version: 1.0.0
-Class-Path: lib/org.apache.felix.ipojo.annotations-1.13.0.jar lib/pax-ex
- am-spi-4.13.5.jar lib/tinybundles-2.1.1.jar lib/bndlib-2.4.0.jar lib/op
- s4j-base-lang-1.5.1.jar lib/pax-exam-container-forked-4.13.5.jar lib/pa
- x-exam-4.13.5.jar lib/ops4j-base-store-1.5.1.jar lib/ops4j-base-exec-1.
- 5.1.jar lib/ops4j-base-net-1.5.1.jar lib/ops4j-base-monitors-1.5.1.jar 
- lib/ops4j-base-io-1.5.1.jar lib/ops4j-base-spi-1.5.1.jar lib/pax-swissb
- ox-framework-1.8.3.jar lib/pax-swissbox-tracker-1.8.4.jar lib/pax-swiss
- box-lifecycle-1.8.4.jar lib/pax-url-classpath-2.6.14.jar lib/pax-url-co
- mmons-2.6.14.jar lib/ops4j-base-util-property-1.5.1.jar lib/pax-swissbo
- x-property-1.8.5.jar lib/org.apache.felix.framework-7.0.5.jar lib/anima
- l-sniffer-annotations-1.9.jar lib/maven-shade-plugin-3.6.0.jar lib/plex
- us-utils-3.5.1.jar lib/asm-9.7.jar lib/asm-commons-9.7.jar lib/asm-tree
- -9.7.jar lib/jdom2-2.0.6.1.jar lib/commons-compress-1.26.2.jar lib/comm
- ons-codec-1.17.0.jar lib/commons-lang3-3.14.0.jar lib/commons-io-2.16.1
- .jar lib/jdependency-2.10.jar lib/slf4j-api-2.1.0-alpha1.jar lib/log4j-
- core-2.24.2.jar lib/log4j-api-2.24.2.jar lib/org.osgi.core-6.0.0.jar li
- b/maven-bundle-plugin-5.1.9.jar lib/biz.aQute.bndlib-6.3.1.jar lib/org.
- osgi.dto-1.0.0.jar lib/org.osgi.resource-1.0.0.jar lib/org.osgi.framewo
- rk-1.8.0.jar lib/org.osgi.util.tracker-1.5.4.jar lib/osgi.annotation-8.
- 0.1.jar lib/org.osgi.service.log-1.3.0.jar lib/org.osgi.service.reposit
- ory-1.1.0.jar lib/org.osgi.util.function-1.2.0.jar lib/org.osgi.util.pr
- omise-1.2.0.jar lib/biz.aQute.bnd.util-6.3.1.jar lib/org.apache.felix.b
- undlerepository-1.6.6.jar lib/easymock-2.4.jar lib/org.apache.felix.uti
- ls-1.6.0.jar lib/org.osgi.compendium-4.2.0.jar lib/maven-reporting-api-
- 3.0.jar lib/maven-archiver-3.5.2.jar lib/maven-artifact-3.1.1.jar lib/m
- aven-model-3.1.1.jar lib/maven-core-3.1.1.jar lib/maven-settings-3.1.1.
- jar lib/maven-settings-builder-3.1.1.jar lib/maven-repository-metadata-
- 3.1.1.jar lib/maven-plugin-api-3.1.1.jar lib/maven-model-builder-3.1.1.
- jar lib/maven-aether-provider-3.1.1.jar lib/aether-spi-0.9.0.M2.jar lib
- /aether-impl-0.9.0.M2.jar lib/aether-api-0.9.0.M2.jar lib/org.eclipse.s
- isu.plexus-0.0.0.M5.jar lib/cdi-api-1.0.jar lib/jsr250-api-1.0.jar lib/
- javax.inject-1.jar lib/guava-10.0.1.jar lib/jsr305-1.3.9.jar lib/sisu-g
- uice-3.1.0-no_aop.jar lib/aopalliance-1.0.jar lib/org.eclipse.sisu.inje
- ct-0.0.0.M5.jar lib/plexus-classworlds-2.5.1.jar lib/plexus-sec-dispatc
- her-1.3.jar lib/plexus-cipher-1.4.jar lib/maven-shared-utils-3.3.3.jar 
- lib/plexus-archiver-4.2.7.jar lib/plexus-io-3.2.0.jar lib/snappy-0.4.ja
- r lib/xz-1.9.jar lib/plexus-interpolation-1.26.jar lib/maven-dependency
- -tree-3.0.jar lib/plexus-component-annotations-1.6.jar lib/aether-util-
- 0.9.0.M2.jar lib/plexus-build-api-0.0.7.jar lib/doxia-sink-api-1.0.jar 
- lib/doxia-site-renderer-1.0.jar lib/doxia-core-1.0.jar lib/plexus-i18n-
- 1.0-beta-7.jar lib/plexus-container-default-1.0-alpha-30.jar lib/plexus
- -velocity-1.1.7.jar lib/velocity-1.5.jar lib/commons-lang-2.1.jar lib/o
- ro-2.0.8.jar lib/doxia-decoration-model-1.0.jar lib/commons-collections
- -3.2.jar lib/doxia-module-apt-1.0.jar lib/doxia-module-fml-1.0.jar lib/
- doxia-module-xdoc-1.0.jar lib/doxia-module-xhtml-1.0.jar lib/jdom-1.1.j
- ar
+Class-Path: lib/maven-shade-plugin-3.6.0.jar lib/plexus-utils-3.5.1.jar 
+ lib/asm-9.7.jar lib/asm-commons-9.7.jar lib/asm-tree-9.7.jar lib/jdom2-
+ 2.0.6.1.jar lib/commons-compress-1.26.2.jar lib/commons-codec-1.17.0.ja
+ r lib/commons-lang3-3.14.0.jar lib/commons-io-2.16.1.jar lib/jdependenc
+ y-2.10.jar lib/slf4j-api-2.1.0-alpha1.jar lib/log4j-core-2.24.2.jar lib
+ /log4j-api-2.24.2.jar lib/org.osgi.core-6.0.0.jar lib/maven-bundle-plug
+ in-5.1.9.jar lib/biz.aQute.bndlib-6.3.1.jar lib/org.osgi.dto-1.0.0.jar 
+ lib/org.osgi.resource-1.0.0.jar lib/org.osgi.framework-1.8.0.jar lib/or
+ g.osgi.util.tracker-1.5.4.jar lib/osgi.annotation-8.0.1.jar lib/org.osg
+ i.service.log-1.3.0.jar lib/org.osgi.service.repository-1.1.0.jar lib/o
+ rg.osgi.util.function-1.2.0.jar lib/org.osgi.util.promise-1.2.0.jar lib
+ /biz.aQute.bnd.util-6.3.1.jar lib/org.apache.felix.bundlerepository-1.6
+ .6.jar lib/easymock-2.4.jar lib/org.apache.felix.utils-1.6.0.jar lib/or
+ g.osgi.compendium-4.2.0.jar lib/maven-reporting-api-3.0.jar lib/maven-a
+ rchiver-3.5.2.jar lib/maven-artifact-3.1.1.jar lib/maven-model-3.1.1.ja
+ r lib/maven-core-3.1.1.jar lib/maven-settings-3.1.1.jar lib/maven-setti
+ ngs-builder-3.1.1.jar lib/maven-repository-metadata-3.1.1.jar lib/maven
+ -plugin-api-3.1.1.jar lib/maven-model-builder-3.1.1.jar lib/maven-aethe
+ r-provider-3.1.1.jar lib/aether-spi-0.9.0.M2.jar lib/aether-impl-0.9.0.
+ M2.jar lib/aether-api-0.9.0.M2.jar lib/org.eclipse.sisu.plexus-0.0.0.M5
+ .jar lib/cdi-api-1.0.jar lib/jsr250-api-1.0.jar lib/javax.inject-1.jar 
+ lib/guava-10.0.1.jar lib/jsr305-1.3.9.jar lib/sisu-guice-3.1.0-no_aop.j
+ ar lib/aopalliance-1.0.jar lib/org.eclipse.sisu.inject-0.0.0.M5.jar lib
+ /plexus-classworlds-2.5.1.jar lib/plexus-sec-dispatcher-1.3.jar lib/ple
+ xus-cipher-1.4.jar lib/maven-shared-utils-3.3.3.jar lib/plexus-archiver
+ -4.2.7.jar lib/plexus-io-3.2.0.jar lib/snappy-0.4.jar lib/xz-1.9.jar li
+ b/plexus-interpolation-1.26.jar lib/maven-dependency-tree-3.0.jar lib/p
+ lexus-component-annotations-1.6.jar lib/aether-util-0.9.0.M2.jar lib/pl
+ exus-build-api-0.0.7.jar lib/doxia-sink-api-1.0.jar lib/doxia-site-rend
+ erer-1.0.jar lib/doxia-core-1.0.jar lib/plexus-i18n-1.0-beta-7.jar lib/
+ plexus-container-default-1.0-alpha-30.jar lib/plexus-velocity-1.1.7.jar
+  lib/velocity-1.5.jar lib/commons-lang-2.1.jar lib/oro-2.0.8.jar lib/do
+ xia-decoration-model-1.0.jar lib/commons-collections-3.2.jar lib/doxia-
+ module-apt-1.0.jar lib/doxia-module-fml-1.0.jar lib/doxia-module-xdoc-1
+ .0.jar lib/doxia-module-xhtml-1.0.jar lib/jdom-1.1.jar
 Created-By: Apache Maven Bundle Plugin 5.1.9
-Import-Package: org.cuenta,org.cliente,java.math,org.junit,org.osgi.fram
- ework;version="[1.10,2)",java.util,org.ops4j.pax.exam;version="[4.13,5)
- "
+Import-Package: org.cuenta,org.cliente,org.junit,org.osgi.framework;vers
+ ion="[1.8,2)",org.ops4j.pax.exam
 Main-Class: Main
 Tool: Bnd-6.3.1.202206071316

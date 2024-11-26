@@ -9,7 +9,7 @@ import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.junit.PaxExam;
 import static org.ops4j.pax.exam.CoreOptions.*;
 import org.osgi.framework.Bundle;
-import org.ops4j.pax.exam.junit.Configuration;
+import org.ops4j.pax.exam.Configuration;
 import org.junit.Assert;
 import org.osgi.framework.BundleContext;
 import org.test.antiguo.TestPagoAntiguo;

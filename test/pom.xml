@@ -17,21 +17,57 @@
     </properties>
 
     <dependencies>
+        <!-- Sling Testing PaxExam -->
         <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
-            <version>1.13.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j.pax.exam</groupId>
-            <artifactId>pax-exam-junit4</artifactId>
-            <version>4.13.5</version>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.testing.paxexam</artifactId>
+            <version>4.0.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- an OSGi framework -->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.framework</artifactId>
+            <version>7.0.5</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Pax Exam -->
+        <dependency>
+            <groupId>org.ops4j.pax.exam</groupId>
+            <artifactId>pax-exam</artifactId>
+            <version>4.13.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.exam</groupId>
+            <artifactId>pax-exam-cm</artifactId>
+            <version>4.13.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.exam</groupId>
+            <artifactId>pax-exam-container-forked</artifactId>
+            <version>4.13.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.exam</groupId>
+            <artifactId>pax-exam-junit4</artifactId>
+            <version>4.13.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.ops4j.pax.exam</groupId>
+            <artifactId>pax-exam-link-mvn</artifactId>
+            <version>4.13.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -45,33 +81,6 @@
             <artifactId>cl.psp.cliente</artifactId>
             <version>1.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j.pax.exam</groupId>
-            <artifactId>pax-exam-container-forked</artifactId>
-            <version>4.13.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j.pax.url</groupId>
-            <artifactId>pax-url-classpath</artifactId>
-            <version>2.6.14</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j.pax.url</groupId>
-            <artifactId>pax-url-link</artifactId>
-            <version>2.6.14</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.ops4j.pax.exam</groupId>
-            <artifactId>pax-exam-link-assembly</artifactId>
-            <version>4.13.5</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.framework</artifactId>
-            <version>7.0.5</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
@@ -95,12 +104,12 @@
             <version>2.24.2</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>2.24.2</version>
         </dependency>
+
     </dependencies>
 
     <build>
