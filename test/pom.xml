@@ -201,7 +201,7 @@
                 <version>3.5.2</version>
                 <configuration>
                     <includes>
-                        <include>org.test.integration.TestBundleIntegration</include>
+                        <include>org.test.activator.TestBundleIntegration</include>
                     </includes>
                 </configuration>
             </plugin>
