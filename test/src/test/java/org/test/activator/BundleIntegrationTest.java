@@ -29,8 +29,9 @@ public class TestBundleIntegration{
         return options(
                 junitBundles(),
                 cleanCaches(),
-                mavenBundle("cl.psp", "cliente", "1.0"),
-                mavenBundle("cl.psp", "cuenta", "1.0")
+                systemProperty("org.ops4j.pax.url.mvn.localRepository").value(System.getProperty("user.home") + "/.m2/repository"),
+                mavenBundle("cl.psp", "cl.psp.cliente", "1.0"),
+                mavenBundle("cl.psp", "cl.psp.cuenta", "1.0")
         );
     }
 
