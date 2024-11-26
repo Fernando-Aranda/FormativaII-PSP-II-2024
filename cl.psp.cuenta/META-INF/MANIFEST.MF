@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1732646545562
+Bnd-LastModified: 1732649478657
 Build-Jdk-Spec: 17
 Bundle-ManifestVersion: 2
 Bundle-Name: cl.psp.cuenta

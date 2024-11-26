@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1732646546027
+Bnd-LastModified: 1732649479027
 Build-Jdk-Spec: 17
 Bundle-ManifestVersion: 2
 Bundle-Name: cl.psp.cliente
@@ -7,5 +7,5 @@ Bundle-SymbolicName: cl.psp.cliente
 Bundle-Version: 1.0.0
 Created-By: Apache Maven Bundle Plugin 5.1.9
 Export-Package: org.cliente;uses:="org.cuenta";version="1.0.0"
-Import-Package: org.cuenta;version="[1.0,2)"
+Import-Package: org.cuenta
 Tool: Bnd-6.3.1.202206071316

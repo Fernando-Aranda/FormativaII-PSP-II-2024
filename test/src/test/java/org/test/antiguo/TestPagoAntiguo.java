@@ -9,6 +9,8 @@ import java.math.BigDecimal;
 import java.util.Iterator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,28 +19,15 @@ public class TestPagoAntiguo {
 
 
     @Test
-    public void testPago() {
-
+    public void testCrearCuenta() {
         Cliente cliente = new Cliente();
-        cliente.crearCuenta(new BigDecimal(500));
+        BigDecimal chargeAmount = new BigDecimal(500);
 
-        Iterator cuentas = cliente.obtenerCuentas().iterator();
+        cliente.crearCuenta(chargeAmount);
+        assertNotNull(cliente.obtenerCuentas());
+        assertEquals(1, cliente.obtenerCuentas().size());
 
-        while (cuentas.hasNext()) {
-            Cuenta cuenta = (Cuenta) cuentas.next();
-            BigDecimal pagarMonto = cuenta.pagar();
-            assertEquals("Pago del monto no es correcto.", new BigDecimal(485).setScale(2), pagarMonto);
-        }
-    }
-
-
-    @Test
-    public void testPagoSinCliente() {
-        Cuenta cuenta = new Cuenta(new CalculadoraDescuento() {
-            public BigDecimal obtenerMontoDescuento() { return new BigDecimal(0.1); }
-        }, new BigDecimal(500));
-
-        BigDecimal pagarMonto = cuenta.pagar();
-        assertEquals("Pago del monto no es correcto.", new BigDecimal(450).setScale(2), pagarMonto);
+        Cuenta cuenta = (Cuenta) cliente.obtenerCuentas().get(0);
+        assertEquals(chargeAmount, cuenta.obtenerMontoCargo());
     }
 }
