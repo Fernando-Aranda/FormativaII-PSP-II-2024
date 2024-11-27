@@ -1,16 +1,23 @@
-<Configuration status="WARN">
+<Configuration id="builtin.rolling">
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        <Console name="console">
+            <PatternLayout pattern="%logger/%class [%level] %message%n" />
         </Console>
-        <File name="File" fileName="logs/app.log">
-            <PatternLayout pattern="%d{ISO8601} [%t] %-5p %c - %m%n"/>
-        </File>
+        <RollingFile name="file" append="false">
+            <fileName>logs/service.log</fileName>
+            <filePattern>logs/service.log.%d{yyyy-MM}</filePattern>
+            <PatternLayout pattern="%logger/%class [%level] %mdc %message%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy  />
+            </Policies>
+        </RollingFile>
     </Appenders>
     <Loggers>
-        <Root level="info">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="File"/>
+        <Logger name="my.logger" level="info" additivity="false">
+            <AppenderRef ref="file" />
+        </Logger>
+        <Root level="debug">
+            <AppenderRef ref="console" />
         </Root>
     </Loggers>
 </Configuration>

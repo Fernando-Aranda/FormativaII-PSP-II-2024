@@ -1,5 +1,8 @@
 package org.test.activator;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
@@ -20,6 +23,12 @@ import javax.inject.Inject;
 @RunWith(PaxExam.class)
 public class TestBundleIntegration{
 
+    private static final Logger logger = LogManager.getLogger(TestBundleIntegration.class);
+
+    @BeforeClass
+    public static void setupLogging() {
+        System.setProperty("org.ops4j.pax.logging.configuration", "file:src/main/resources/org.ops4j.pax.logging.cfg");
+    }
 
     @Inject
     BundleContext context;
@@ -30,8 +39,15 @@ public class TestBundleIntegration{
                 junitBundles(),
                 cleanCaches(),
                 systemProperty("org.ops4j.pax.url.mvn.localRepository").value(System.getProperty("user.home") + "/.m2/repository"),
+                systemProperty("org.ops4j.pax.logging.DefaultServiceLog.level").value("DEBUG"),
+                systemProperty("felix.fileinstall.dir").value("src/test/resources"),
+                systemProperty("felix.fileinstall.filter").value(".*\\.cfg"),
                 mavenBundle("cl.psp", "cl.psp.cliente", "1.0"),
-                mavenBundle("cl.psp", "cl.psp.cuenta", "1.0")
+                mavenBundle("cl.psp", "cl.psp.cuenta", "1.0"),
+                mavenBundle("org.apache.felix", "org.apache.felix.configadmin", "1.9.26"),
+                mavenBundle("org.apache.felix", "org.apache.felix.fileinstall", "3.7.4"),
+                mavenBundle("org.ops4j.pax.logging", "pax-logging-service", "1.11.17"),
+                mavenBundle("org.ops4j.pax.logging", "pax-logging-log4j2", "2.2.7")
         );
     }
 
@@ -47,16 +63,16 @@ public class TestBundleIntegration{
     }
 
     @Test
-    public void testTestPagoAntiguo() {
+    public void testPagoAntiguo() {
         // Run the tests from TestPagoAntiguo using JUnitCore
         Result result = JUnitCore.runClasses(TestPagoAntiguo.class);
 
         if (result.wasSuccessful()) {
-            System.out.println("¡Todas las pruebas pasaron exitosamente!");
+            logger.info("¡Todas las pruebas pasaron exitosamente!");
         } else {
-            System.out.println("Pruebas fallidas:");
+            logger.info("Pruebas fallidas:");
             for (Failure failure : result.getFailures()) {
-                System.out.println(failure.toString());
+                logger.info(failure.toString());
             }
         }
 
@@ -64,16 +80,16 @@ public class TestBundleIntegration{
     }
 
     @Test
-    public void testTestPagoNuevo() {
+    public void testPagoNuevo() {
         // Run the tests from TestPagoAntiguo using JUnitCore
         Result result = JUnitCore.runClasses(TestPagoNuevo.class);
 
         if (result.wasSuccessful()) {
-            System.out.println("¡Todas las pruebas pasaron exitosamente!");
+            logger.info("¡Todas las pruebas pasaron exitosamente!");
         } else {
-            System.out.println("Pruebas fallidas:");
+            logger.info("Pruebas fallidas:");
             for (Failure failure : result.getFailures()) {
-                System.out.println(failure.toString());
+                logger.info(failure.toString());
             }
         }
         Assert.assertTrue(result.wasSuccessful());
