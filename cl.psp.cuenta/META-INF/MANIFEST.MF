@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1732722477093
+Bnd-LastModified: 1732802812043
 Build-Jdk-Spec: 17
 Bundle-ManifestVersion: 2
 Bundle-Name: cl.psp.cuenta
@@ -7,6 +7,4 @@ Bundle-SymbolicName: cl.psp.cuenta
 Bundle-Version: 1.0.0
 Created-By: Apache Maven Bundle Plugin 5.1.9
 Export-Package: org.cuenta;version="1.0.0"
-Originally-Created-By: Apache Maven Bundle Plugin 5.1.9
-Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=17))"
 Tool: Bnd-6.3.1.202206071316

@@ -1,23 +1,33 @@
-<Configuration id="builtin.rolling">
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
     <Appenders>
-        <Console name="console">
-            <PatternLayout pattern="%logger/%class [%level] %message%n" />
+        <!-- console appender for the CONSOLE -->
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601} | %-5.5p | %C | %X{bundle.name} | %m%n"/>
         </Console>
-        <RollingFile name="file" append="false">
-            <fileName>logs/service.log</fileName>
-            <filePattern>logs/service.log.%d{yyyy-MM}</filePattern>
-            <PatternLayout pattern="%logger/%class [%level] %mdc %message%n" />
+
+        <!-- appender for the File  -->
+        <RollingFile name="DEFAULT_LOG" fileName="logs/log.log" append="true" filePattern="logs/log-%i.txt">
+            <PatternLayout>
+                <pattern>%d{ISO8601} | %-5.5p | %C | %X{bundle.name} | %m%n</pattern>
+            </PatternLayout>
             <Policies>
-                <TimeBasedTriggeringPolicy  />
+                <SizeBasedTriggeringPolicy size="250 MB"/>
             </Policies>
         </RollingFile>
+        <Async name="ASYNC">
+            <AppenderRef ref="DEFAULT_LOG"/>
+            <AppenderRef ref="CONSOLE"/>
+        </Async>
     </Appenders>
+
     <Loggers>
-        <Logger name="my.logger" level="info" additivity="false">
-            <AppenderRef ref="file" />
-        </Logger>
-        <Root level="debug">
-            <AppenderRef ref="console" />
+        <Root level="info">
+            <AppenderRef ref="ASYNC"/>
         </Root>
+        <!--# top level package loggers for com ...-->
+        <Logger name="com" level="WARN" >
+            <AppenderRef ref="DEFAULT_LOG" />
+        </Logger>
     </Loggers>
 </Configuration>
