@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="info">
+<Configuration status="INFO">
+    <!-- Configuración de los Appenders -->
     <Appenders>
-        <!-- console appender for the CONSOLE -->
-        <Console name="CONSOLE" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{ISO8601} | %-5.5p | %C | %X{bundle.name} | %m%n"/>
+        <!-- Consola -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
         </Console>
 
-        <!-- appender for the File  -->
-        <RollingFile name="DEFAULT_LOG" fileName="logs/log.log" append="true" filePattern="logs/log-%i.txt">
+        <!-- Rolling File -->
+        <RollingFile name="RollingFile" fileName="logs/app.log" filePattern="logs/app-%d{yyyy-MM-dd}.log">
             <PatternLayout>
-                <pattern>%d{ISO8601} | %-5.5p | %C | %X{bundle.name} | %m%n</pattern>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Pattern>
             </PatternLayout>
             <Policies>
-                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <!-- Rotación diaria -->
+                <TimeBasedTriggeringPolicy />
+                <!-- Rotación por tamaño (ejemplo: 10 MB) -->
+                <SizeBasedTriggeringPolicy size="10MB" />
             </Policies>
+            <DefaultRolloverStrategy max="7" />
         </RollingFile>
-        <Async name="ASYNC">
-            <AppenderRef ref="DEFAULT_LOG"/>
-            <AppenderRef ref="CONSOLE"/>
-        </Async>
     </Appenders>
 
+    <!-- Configuración de Loggers -->
     <Loggers>
-        <Root level="info">
-            <AppenderRef ref="ASYNC"/>
-        </Root>
-        <!--# top level package loggers for com ...-->
-        <Logger name="com" level="WARN" >
-            <AppenderRef ref="DEFAULT_LOG" />
+        <!-- Logger para la aplicación -->
+        <Logger name="com.example" level="DEBUG" additivity="false">
+            <AppenderRef ref="RollingFile" />
+            <AppenderRef ref="Console" />
         </Logger>
+
+        <!-- Logger raíz -->
+        <Root level="INFO">
+            <AppenderRef ref="RollingFile" />
+            <AppenderRef ref="Console" />
+        </Root>
     </Loggers>
 </Configuration>

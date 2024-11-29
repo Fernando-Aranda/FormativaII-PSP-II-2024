@@ -2,6 +2,7 @@ package org.test.activator;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.LoggerContext;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
@@ -35,6 +36,7 @@ public class TestBundleIntegration{
                 paxLoggingLog4j2(),
                 cleanCaches(),
                 systemProperty("org.ops4j.pax.url.mvn.localRepository").value(System.getProperty("user.home") + "/.m2/repository"),
+                systemProperty("org.ops4j.pax.logging.DefaultServiceLog.level").value("INFO"),
                 mavenBundle("cl.psp", "cl.psp.cliente", "1.0"),
                 mavenBundle("cl.psp", "cl.psp.cuenta", "1.0"),
                 mavenBundle("org.apache.felix", "org.apache.felix.configadmin", "1.9.26"),
@@ -46,6 +48,9 @@ public class TestBundleIntegration{
 
     @Test
     public void testBundlesActivos() {
+
+
+
         Bundle clienteBundle = getBundleBySymbolicName("cl.psp.cliente");
         Bundle cuentaBundle = getBundleBySymbolicName("cl.psp.cuenta");
 
@@ -53,10 +58,18 @@ public class TestBundleIntegration{
         Assert.assertNotNull(cuentaBundle);
         Assert.assertEquals(Bundle.ACTIVE, clienteBundle.getState());
         Assert.assertEquals(Bundle.ACTIVE, cuentaBundle.getState());
+
+        LoggerContext context = (LoggerContext) LogManager.getContext(false);
+        context.stop();
+        context.start();
     }
 
     @Test
     public void testPagoAntiguo() {
+
+
+
+
         // Run the tests from TestPagoAntiguo using JUnitCore
         Result result = JUnitCore.runClasses(TestPagoAntiguo.class);
 
@@ -70,6 +83,10 @@ public class TestBundleIntegration{
         }
 
         Assert.assertTrue(result.wasSuccessful());
+
+        LoggerContext context = (LoggerContext) LogManager.getContext(false);
+        context.stop();
+        context.start();
     }
 
     @Test
@@ -86,6 +103,10 @@ public class TestBundleIntegration{
             }
         }
         Assert.assertTrue(result.wasSuccessful());
+
+        LoggerContext context = (LoggerContext) LogManager.getContext(false);
+        context.stop();
+        context.start();
     }
 
     private Bundle getBundleBySymbolicName(String symbolicName) {
