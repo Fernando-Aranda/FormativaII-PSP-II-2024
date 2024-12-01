@@ -23,6 +23,12 @@
       <artifactId>org.apache.felix.ipojo.annotations</artifactId>
       <version>1.13.0</version>
     </dependency>
+    <dependency>
+      <groupId>cl.psp</groupId>
+      <artifactId>cl.psp.base</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
 
   </dependencies>
 

@@ -1,15 +1,18 @@
 package org.cuenta;
 
+import cl.psp.base.CalculadoraDescuento;
+import cl.psp.base.Cuenta;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 
-public class Cuenta {
+public class CuentaDefecto implements Cuenta {
 
     private BigDecimal monto;
     private CalculadoraDescuento descuento;
 
-    public Cuenta(CalculadoraDescuento descuento, BigDecimal monto) {
+    public CuentaDefecto(CalculadoraDescuento descuento, BigDecimal monto) {
         this.descuento = descuento;
         this.monto = monto;
     }

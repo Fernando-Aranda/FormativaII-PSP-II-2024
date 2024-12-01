@@ -19,6 +19,7 @@
     <module>cl.psp.cliente</module>
     <module>cl.psp.cuenta</module>
     <module>test</module>
+      <module>cl.psp.base</module>
   </modules>
 
   <dependencies>

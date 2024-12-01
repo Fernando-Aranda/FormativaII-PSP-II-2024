@@ -1,4 +1,4 @@
-package org.cuenta;
+package cl.psp.base;
 
 import java.math.BigDecimal;
 

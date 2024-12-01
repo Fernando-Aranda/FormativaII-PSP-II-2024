@@ -11,6 +11,9 @@ import org.junit.runner.notification.Failure;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.junit.PaxExam;
 import static org.ops4j.pax.exam.CoreOptions.*;
+
+import org.ops4j.pax.exam.spi.reactors.ExamReactorStrategy;
+import org.ops4j.pax.exam.spi.reactors.PerSuite;
 import org.osgi.framework.Bundle;
 import org.ops4j.pax.exam.Configuration;
 import org.junit.Assert;
@@ -22,6 +25,7 @@ import static org.apache.sling.testing.paxexam.SlingOptions.paxLoggingLog4j2;
 import javax.inject.Inject;
 
 @RunWith(PaxExam.class)
+@ExamReactorStrategy(PerSuite.class)
 public class TestBundleIntegration{
 
     private static final Logger logger = LogManager.getLogger(TestBundleIntegration.class);

@@ -1,34 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cl.psp.cliente</artifactId>
-    <packaging>bundle</packaging>
-    <name>cl.psp.cliente</name>
-    <version>1.0</version>
-
     <parent>
         <groupId>cl.psp</groupId>
         <artifactId>FormativaII-PSP-II-2024</artifactId>
         <version>1.0</version>
     </parent>
+    <artifactId>cl.psp.base</artifactId>
+    <name>Archetype - cl.psp.base</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
-            <version>1.13.0</version>
-        </dependency>
-        <dependency>
-            <groupId>cl.psp</groupId>
-            <artifactId>cl.psp.base</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -105,4 +85,3 @@
     </distributionManagement>
 
 </project>
-

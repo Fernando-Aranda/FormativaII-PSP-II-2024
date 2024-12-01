@@ -1,7 +1,7 @@
 package org.cliente;
 
-import org.cuenta.CalculadoraDescuento;
-import org.cuenta.Cuenta;
+import cl.psp.base.CalculadoraDescuento;
+import cl.psp.base.Cuenta;
 
 import java.util.*;
 import java.math.BigDecimal;
@@ -21,12 +21,12 @@ public class Cliente implements CalculadoraDescuento {
         return this.cuentas;
     }
 
-    public void crearCuenta(BigDecimal chargeAmount) {
-        Cuenta bill = new Cuenta(this, chargeAmount);
-        if (cuentas == null) {
+    public void ingresarCuenta(Cuenta cuenta) {
+
+        if (cuenta == null) {
             cuentas = new ArrayList();
         }
-        cuentas.add(bill);
+        cuentas.add(cuenta);
     }
 
 }
